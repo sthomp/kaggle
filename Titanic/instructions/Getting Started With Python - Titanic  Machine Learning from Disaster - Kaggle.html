@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-python -->
+<html><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Getting Started With Python - Titanic: Machine Learning from Disaster - Kaggle</title>
+    
+    <meta name="robots" content="index, follow">
+    <link href="https://www.kaggle.com/content/v/e7918c3028a4/kaggle/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+        <meta name="keywords" content="Kaggle, data science, data mining, forecasting, statistics, prediction, bioinformatics, competitions, contests, crowdsourced analytics">
+            <meta name="description" content="Kaggle is a platform for data prediction competitions. Companies, organizations and researchers post their data and have it scrutinized by the world&#39;s best statisticians.">
+
+
+        <link rel="stylesheet" href="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/base.less" type="text/css">
+        <link rel="stylesheet" href="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/kaggle-site.less" type="text/css">
+        <!--[if !IE]>-->
+            <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/mobile.less" type="text/css" media="only screen and (max-device-width: 959px)">
+        <!--<![endif]-->
+
+    
+
+        <script type="text/javascript" async="" src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/ga.js"></script><script type="text/javascript" src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/jquery.min.js"></script>
+                <script type="text/javascript" src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/kaggle.min.js"></script>
+
+    
+                                                    
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuTitle {background-color: #CCCCCC; margin: -5px 0 0 0; text-align: center; font-style: italic; font-size: 80%; color: #444444; padding: 2px 0; overflow: hidden}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+
+<body class="logged-in "><div id="MathJax_Message" style="display: none; "></div>
+    <div id="wrap"><!-- needed for sticky footer -->
+        
+           
+
+<div id="top-bar">
+    <div id="top-bar-inside">
+                
+        <ul id="top-bar-links">
+                <li><a href="https://www.kaggle.com/account/logoff" class="logout-link">Sign out</a></li>
+        </ul>             
+    </div>            
+</div>
+
+<script type="text/javascript">
+    $(function() {
+
+        //login box slidedown
+        $('.login-link').click(function(e) {
+            e.preventDefault();
+            $('#top-bar-signin').slideToggle(250, 'easeOutSine', function() { $('#UserName').focus(); });
+
+            if (!$('#hovering-overlay.login-overlay').length) {
+                $('body').append('<div id="hovering-overlay" class="login-overlay" style="z-index:995; display:none; opacity:0.4">&nbsp;</div>');
+                $('#hovering-overlay.login-overlay').fadeIn('fast');
+            } else {
+                $('#hovering-overlay.login-overlay').fadeOut('fast', function() { $(this).remove(); });
+            }
+        });
+
+        // if user clicks grey-out overlay when there is login dialog, kill dialog
+        $('body').on('click', '#hovering-overlay.login-overlay', function() {
+            $('#top-bar-signin').slideToggle(250, 'easeOutSine', function() { $('#UserName').focus(); });
+            $('#hovering-overlay.login-overlay').fadeOut('fast', function() { $(this).remove(); });
+        });
+    });
+</script>
+
+        <div id="header">
+            <div id="header-inside">
+                <div id="logo">
+                    <a href="https://www.kaggle.com/"><img alt="Kaggle" height="86" src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/site-logo.png" width="240"></a>
+                </div>
+                <!--logo-->
+                <ul id="top-menu">
+        <li><strong><a class="profilelink" href="https://www.kaggle.com/users/59773/scott-thompson" title="View my profile">Scott Thompson</a></strong></li>
+
+    <li><a href="https://www.kaggle.com/About" title="About Kaggle">About</a></li>
+<li><a href="https://www.kaggle.com/Host" title="Learn about hosting your own competition">Hosting Center</a></li>
+<li><a href="https://www.kaggle.com/competitions" title="Search or browse all Kaggle competitions">All Competitions</a></li>
+<li><a href="https://www.kaggle.com/users" title="View the global Kaggle leaderboard" id="users-link">Users</a></li>
+<li><a href="https://www.kaggle.com/forums" title="Kaggle Forums.">Forums</a></li>
+<li><a href="https://www.kaggle.com/Wiki" title="Kaggle Public Wiki">Wiki</a></li>
+<li><a href="http://blog.kaggle.com/" title="Visit No Free Hunch, the official Kaggle blog">Blog</a></li>
+<li><a href="https://www.kaggle.com/forums/f/145/data-science-jobs" title="View job openings posted by our community">Data Science Jobs</a></li>        
+</ul>
+<!-- top-menu -->
+
+            </div> <!-- header-inside -->
+        </div> <!-- header -->
+
+
+        <!-- header-inside and header -->
+        <div id="main">
+             
+            
+
+
+
+
+<div id="competition">
+
+        <header id="comp-header">
+            
+            <a href="https://www.kaggle.com/c/titanic-gettingStarted"><img id="comp-image" src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/front_page.png"></a>
+            <div id="comp-header-details">
+                <h1><a href="https://www.kaggle.com/c/titanic-gettingStarted" style="font-size: 25px; ">Titanic: Machine Learning from Disaster</a>
+                                                        </h1>
+                    <div id="comp-header-stats">
+                        <div id="comp-header-stats-progress">
+                            <div id="comp-header-stats-teams" style="width:1%">
+                            </div>
+                                <div id="comp-header-stats-remaining" style="width: 99%;">
+                                    11 months
+                                    to go
+                                </div>
+                        </div>
+                        <div id="comp-header-stats-start">Friday, September 28, 2012</div>
+                        <div id="comp-header-stats-end">Saturday, September 28, 2013</div>
+                        <div id="comp-header-stats-prize">Knowledge • 82 teams</div>
+                    </div>
+            </div>
+        </header>
+
+        <div class="comp-sidebar">
+            
+            
+
+<div id="competition-dashboard">
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <ul>
+        <li class="cd-home selected"><a href="https://www.kaggle.com/c/titanic-gettingStarted">Home/Info</a>
+            <ul>
+                <li class="cd-data"><a href="https://www.kaggle.com/c/titanic-gettingStarted/data">Data</a></li>
+
+                    <li class="cd-submit submission-link">
+                        <a class="comp-link" href="https://www.kaggle.com/c/titanic-gettingStarted/submit">Make a submission</a>
+                    </li>
+            </ul>
+        </li>
+        
+            <li class="cd-forum"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums">Forum</a></li>
+
+            <li class="cd-leaderboard"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard">Leaderboard</a></li>
+
+            <li class="cd-prospect"><a class="comp-link" href="https://www.kaggle.com/c/titanic-gettingStarted/prospector">Visualization</a></li>
+
+                <li class="cd-team"><a href="https://www.kaggle.com/c/titanic-gettingStarted/team/select">My Team</a></li>
+
+            <li class="cd-submissions"><a href="https://www.kaggle.com/c/titanic-gettingStarted/submissions">My Submissions</a></li>
+
+    </ul>
+</div>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".cd-home").addClass("selected");
+        });
+    </script>
+
+
+           
+    <div class="widget" id="compside-leaderboard">
+        
+        
+        <header>
+            <h1><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard">Leaderboard</a></h1>
+        </header>
+        
+        <ol>
+            
+            
+                    <li value="1"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.81818">deadbeatdawg (3)</a></li>
+                    <li value="2"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.80861">Anand Thakur (3)</a></li>
+                    <li value="3"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.80383">p_5_ (6)</a></li>
+                    <li value="4"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.79426">chwolfe (3)</a></li>
+                    <li value="4"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.79426">Learner_ahead (2)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">Alex (10)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">CMorton (4)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">Random Amazon (4)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">this (2)</a></li>
+                    <li value="10"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78469">Paheli (5)</a></li>
+        </ol>
+    </div> <!-- compside-leaderboard -->
+
+
+    <div class="widget" id="compside-discussions">
+        <header>
+            <h1><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums">Forum (5 topics)</a></h1>
+        </header>
+
+        <ul>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2771/welcome/15126#post15126">Welcome!</a></div>
+                    <div class="post-time">3 hours ago</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2793/implementation-in-r/15123#post15123">Implementation in R</a></div>
+                    <div class="post-time">5 hours ago</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2787/weird-things-happening-on-kaggle-website/15069#post15069">Weird things happening on Kaggle website</a></div>
+                    <div class="post-time">yesterday</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2795/changes-to-test-csv/15064#post15064">Changes to test.csv</a></div>
+                    <div class="post-time">yesterday</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2790/error-while-running-myfirstforest-py/15063#post15063">Error while running myfirstforest.py</a></div>
+                    <div class="post-time">yesterday</div>
+                </li>
+        </ul>
+
+    </div> 
+
+<div id="stats-ticker">      
+    <div id="players" class="ticker">
+            <div class="ticker-caption-teams">82 teams with</div>
+        <div class="numbers converted"><div class="ticker-number ticker-8"></div><div class="ticker-number ticker-3"></div></div>
+        <div class="ticker-caption">participants</div>
+    </div>
+    <div id="entries" class="ticker">
+        <div class="numbers converted"><div class="ticker-number ticker-2"></div><div class="ticker-number ticker-0"></div><div class="ticker-number ticker-5"></div></div>
+        <div class="ticker-caption">entries</div>
+    </div>      
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#stats-ticker .ticker div.numbers').not('.converted').each(function () {
+            $no = $(this).text();
+
+            var no_array = $no.split("");
+            $output = "";
+            for (var i = 0; i < no_array.length; i++) {
+                $output = $output + '<div class="ticker-number ticker-' + no_array[i] + '" />';
+            }
+            $(this).html($output).addClass('converted');
+        });
+    });
+    
+</script>
+        </div>
+    <div class="getting-started-with-python comp-content with-sidebar">
+        
+            <header class="info">
+                <div class="simple-steps">
+                    <a class="info" href="https://www.kaggle.com/c/titanic-gettingStarted">Competition Details</a>
+                    »
+                    <a class="data" href="https://www.kaggle.com/c/titanic-gettingStarted/data">Get the Data</a>
+                    »
+ <a class="submit" href="https://www.kaggle.com/c/titanic-gettingStarted/submit">Make a submission</a>                 </div>
+            </header>
+        
+        <div class="comp-content-inside">
+            <div id="competition-intro">
+                
+                        <ul id="comp-homepage-subpages">
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted">Description</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/evaluation">Evaluation</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/rules">Rules</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/prizes">Prizes</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/frequently-asked-questions">Frequently Asked Questions</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/further-reading-watching">Further Reading / Watching</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-excel">Getting Started With Excel</a>
+                </li>
+                <li class="selected">
+                    <a href="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle.html">Getting Started With Python</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-random-forests">Getting Started With Random Forests</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/submission-instructions">Submission Instructions</a>
+                </li>
+        </ul>
+
+            </div>
+                <div id="comp-homepage-content" class="cms-page">
+                    
+
+
+
+<h2 class="page-name">
+Getting-started-with-python</h2>
+
+
+
+<p><span style="text-decoration:underline">Kaggle Getting Started <em>with Python:
+</em>Titanic Competition</span></p>
+<p>Recapping our work with Excel, we have been able to successfully download the competition data and submit 2 models: one based on just the gender and another on the gender, class, and price of ticket. This is good for an initial submission, however problems
+ arise when we move to slightly more complicated models and the time taken to forumate approaches in Excel takes longer. What do you do if you want to make a more complicated model but I don’t have the time to manually find the proportion of survivors for a
+ given variable? &nbsp;We should make the computer do the hard work for us! <strong></strong></p>
+<p><strong><span style="text-decoration:underline">I want to add more variables but it takes so much time!</span></strong></p>
+<p>Programming scripts are a great way to speed up your calculations and avoid the arduous task of manually calculating the pivot table ratios. There are many languages out there, each with its own advantages and disadvantages. Here we are going to use
+<strong><em>Python</em></strong>, which is an easy to use scripting language. If you do not have this installed, please visit the
+<a title="Get Python!!" href="http://www.python.org/getit/" target="_blank">Python web site</a> and folllow the instructions there to install.</p>
+<p>One of the most useful advantages of Python is its packages. Of these packages, the most useful (for Kaggle competitions) are the Numpy, Scipy, matplotlib and csv pacakge. In order to check whether you have these, just go to your python command line and
+ type 'import Numpy' (and so on). If you don’t you will need them! This tutorial is going to guide you through making the same submissions as before, only this time using Python.</p>
+<p><strong><span style="text-decoration:underline">Python: Reading in your <em>train.csv</em></span></strong></p>
+<p>Python has a nice csv reader, which reads each line of a file into memory. You can read in each row and just append a list. From here, you can quickly turn it into an array.&nbsp;</p>
+<pre>#The first thing to do is to import the relevant packages
+# that I will need for my script, 
+#these include the Numpy (for maths and arrays)
+#and csv for reading and writing csv files
+#If i want to use something from this I need to call 
+#csv.[function] or np.[function] first
+
+import csv as csv&nbsp;
+import numpy as np
+
+#Open up the csv file in to a Python object
+csv_file_object = csv.reader(open('../csv/train.csv', 'rb')) 
+header = csv_file_object.next()  #The next() command just skips the 
+                                 #first line which is a header
+data=[]                          #Create a variable called 'data'
+for row in csv_file_object:      #Run through each row in the csv file
+    data.append(row)             #adding each row to the data variable
+data = np.array(data) 	         #Then convert from a list to an array
+			         #Be aware that each item is currently
+                                 #a string in this format
+</pre>
+<p><span style="text-decoration:underline"><strong>I have my data now I want to play with it</strong></span></p>
+<p>Now if you want to call a specific column of data, say, the gender column, I can just type data[0::,3], remembering that 0:: means all, and Python indexes from 0 (not 1). You should be aware that the csv reader works by default with strings, so you will
+ need to convert to floats in order to do numerical calculations. For example, you can turn the class variable into floats by using data[0::,1].astype(np.float). Using this, we can calculate the proportion of survivors on the Titanic:&nbsp;</p>
+<pre>#The size function counts how many elements are in
+#in the array and sum (as you would expects) sums up
+#the elements in the array.
+
+number_passengers = np.size(data[0::,0].astype(np.float))
+number_survived = np.sum(data[0::,0].astype(np.float))
+proportion_survivors = number_passengers / number_survived</pre>
+<p>Numpy has some lovely functions. For example, we can search the gender column, find where all the elements equal female (and for males, 'do not equal female') and then use this to determine the number of females and males that survived:&nbsp;</p>
+<pre>women_only_stats = data[0::,3] == "female" #This finds where all 
+                                           #the elements in the gender
+                                           #column that equals “female”
+men_only_stats = data[0::,3] != "female"   #This finds where all the 
+                                           #elements do not equal 
+                                           #female (I.e. male)
+</pre>
+<p>Using these indexes we can select only those women and men on board and find the proportion of those who survived:</p>
+<pre>#Using the index from above we select the females and males separately
+women_onboard = data[women_only_stats,0].astype(np.float)     
+men_onboard = data[men_only_stats,0].astype(np.float)
+
+# Then we finds the proportions of them that survived
+proportion_women_survived = \                                     
+                       np.sum(women_onboard) / np.size(women_onboard)  
+proportion_men_survived = \
+                       np.sum(men_onboard) / np.size(men_onboard) 
+
+#and then print it out
+print 'Proportion of women who survived is %s' % proportion_women_survived
+print 'Proportion of men who survived is %s' % proportion_men_survived</pre>
+<p><span style="text-decoration:underline"><strong>Reading the test data and writing the gender model as a csv</strong></span></p>
+<p>As before, we need to read in the test file by opening a Python object to read and another to write. First, we read in the
+<em><strong>test.csv</strong></em> file and skip the header line:&nbsp;</p>
+<pre>test_file_obect = csv.reader(open('../csv/test.csv', 'rb'))
+header = test_file_obect.next()</pre>
+<p>Now, let's open the a new file so we can write to it. Call it something descriptive so that it is recognizable when we upload it:</p>
+<pre>open_file_object = csv.writer(open("../csv/genderbasedmodelpy.csv", "wb"))</pre>
+<p>We now want to read in the test file row by row, see if it is female or male, and write our survival prediction to a&nbsp;new file.&nbsp;</p>
+<pre>for row in test_file_obect:       #for each row in test.csv
+    if row[2] == 'female':             #is it a female, if yes then
+        row.insert(0,'1')              #then Insert the prediction
+                                       #of survived,'1' at position 0 
+        open_file_object.writerow(row) #and write the row to the
+    else:                              #new file else
+        row.insert(0,'0')	       #insert the prediction of did not 
+        open_file_object.writerow(row) #survive (0) and write row </pre>
+<p>Now you have a file called 'genderbasedmodelpy.csv', which you can submit!</p>
+<p><strong><span style="text-decoration:underline">Pythonising the second submission</span></strong></p>
+<p>By now you have created your first python submission. &nbsp;Let's complicate things and try and submit the same submission as before, binning up the ticket price into the four bins and submitting on class, gender, and ticket price. This part assumes that you
+ have completed the 'Reading in your train.csv' and you have a data array as before.</p>
+<p>The idea is to create an table which contains just 1's and 0's. The array will be a survival reference table, whereby you read in the test data, find out passenger attributes, look them up in the survival table, and determine if they survive or not. In the
+ case of a model that uses gender, class, and ticket price, you will need an array of 2x3x4 (male or female, 1<sup>st</sup>, 2<sup>nd</sup>, or 3<sup>rd&nbsp;</sup>class).</p>
+<p>The script will systematically will loop through each combination and use the 'where' function in python to search the passengers that fit that combination of variables. Just like before, you can ask what indexes equals female, 1<sup>st</sup> class, and
+ paid more than $30. The problem is that looping through requires bins of equal sizes, i.e. $0-$9,$10-$19,$20-$29,$30-$39. &nbsp;For the sake of binning let's say everything equal to and above 40 equals 39 so it falls in this bin, so then you can set the bins:</p>
+<pre>fare_ceiling = 40
+data[data[0::,8].astype(np.float) &gt;= fare_ceiling, 8] = fare_ceiling-1.0
+fare_bracket_size = 10
+number_of_price_brackets = fare_ceiling / fare_bracket_size
+number_of_classes = 3 #There were 1st, 2nd and 3rd classes on board </pre>
+<p>Now that these are set up, you can loop through each variable and find all those passengers that agree with the statements:</p>
+<pre>for i in xrange(number_of_classes):       #search through each class
+  for j in xrange(number_of_price_brackets):   #search through each price
+
+    women_only_stats = data[                          \#Which element           
+                         (data[0::,3] == "female")    \#is a female
+                       &amp;(data[0::,1].astype(np.float) \#and was ith class
+                             == i+1)                  \                     
+                       &amp;(data[0:,8].astype(np.float)  \#was greater 
+                            &gt;= j*fare_bracket_size)   \#than this bin              
+                       &amp;(data[0:,8].astype(np.float)  \#and less than
+                            &lt; (j+1)*fare_bracket_size)\#the next bin    
+                          , 0]                        #in the 1st col                           
+ 						                                    									
+
+
+    men_only_stats = data[                            \#Which element           
+                         (data[0::,3] != "female")    \#is a male
+                       &amp;(data[0::,1].astype(np.float) \#and was ith class
+                             == i+1)                  \                     
+                       &amp;(data[0:,8].astype(np.float)  \#was greater 
+                            &gt;= j*fare_bracket_size)   \#than this bin              
+                       &amp;(data[0:,8].astype(np.float)  \#and less than
+                            &lt; (j+1)*fare_bracket_size)\#the next bin    
+                          , 0] </pre>
+<p>Notice the <em>data[ where function, 0]</em>&nbsp;means it is finding the survival results for the statement which is being called. The first loop will return the survival records for all the 1<sup>st</sup>-class females who paid less than $10 and all the 1<sup>st</sup>-class
+ males who paid less than $10. &nbsp;We can then find the proportion of survivors for this particular combination of variables and assign it to our survival table:</p>
+<pre>survival_table[0,i,j] = np.mean(women_only_stats.astype(np.float)) #Women stats
+survival_table[1,i,j] = np.mean(men_only_stats.astype(np.float)) #Men stats</pre>
+<p>At the end we will get a table which will be split into two 3x4 arrays. The first will be the females, with the rows giving the class and columns giving the fare bracket, and the second will be the males.&nbsp;</p>
+<p>This approach creates a problem if there are no passengers in a given category. For example, no females paid less than $10 for a first class ticket, Python will return a nan for the mean since it is dividing by zero. We can get rid of these using a simple
+ statement (a warning will show when the script is run but it won't have effect the output):</p>
+<pre>survival_table[ survival_table != survival_table ] = 0.</pre>
+<p>Assuming any probability greater than or equal to 0.5 results in survival and less than 0.5 does not, we can produce our survival table with:</p>
+<pre>survival_table[ survival_table &lt; 0.5 ] = 0
+survival_table[ survival_table &gt;= 0.5 ] = 1 </pre>
+<p>Now we have a survival table. When we go through each row of the test file we can find what criteria fit each passenger and assign them a yes or no according to our survival table. &nbsp;As previously, let's open up the test file to read (and skip the header
+ row), and a new file, 'genderclasspricebasedmodelpy.csv' to write to:</p>
+<pre>test_file_obect = csv.reader(open('../csv/test.csv', 'rb'))
+fname = "../csv/genderclasspricebasedmodelpy.csv"
+open_file_object = csv.writer(open(fname, "wb"))
+header = test_file_obect.next() </pre>
+<p>As with the previous model, we can take the first&nbsp;passenger, look at his/her gender, class, and price of ticket, and assign a survival label. The problem is that each passenger is not binned. &nbsp;We can loop through each bin and see if the price of their ticket
+ falls in that bin. If so, we can break the loop (so we don’t go through all the bins) and assign that bin:</p>
+<pre>for row in test_file_obect:                   #we are going to loop
+                                              #through each passenger
+                                              #in the test set                     
+  for j in xrange(number_of_price_brackets):  #For each passenger we
+                                              #loop thro each price bin
+    try:                                      #Some passengers have no
+                                              #price data so try to make
+      row[7] = float(row[7])                  # a float
+    except:                                   #If fails: no data, so 
+      bin_fare = 3-float(row[0])              #bin the fare according class
+      break                                   #Break from the bin loop
+    if row[7] &gt; fare_ceiling:              #If there is data see if
+                                              #it is greater than fare
+                                              #ceiling we set earlier
+      bin_fare = number_of_price_brackets-1   #If so set to highest bin
+      break                                   #And then break bin loop
+    if row[7] &gt;= j*fare_bracket_size\
+       and row[7] &lt; \
+      (j+1)*fare_bracket_size:                #If passed these tests 
+                                              #then loop through each 
+                                              #bin 
+      bin_fare = j                            #then assign index
+      break                                   
+</pre>
+<p>There are a couple of things to notice here. We <em>try</em> to make the relevant price variable a float, since, in the case of empty data, the script cannot make it a float. If there is no entry we assume a price on the class of ticket. &nbsp;For example, if
+ the passenger is third&nbsp;class they are put in the first bin, second&nbsp;in the second<sup>&nbsp;</sup>bin, etc. The other thing to notice is that we assign the bin fare to j, so although there are four bins (we will use these as indexes for our survival table), they
+ must go from 0 to 3. &nbsp;This little loop determines the index of the bin to look up in the survival table. Now that we have determined the ticket price bin (variable bin_fare), we can see if the passenger is female, find the class, and then find the relevant
+ element in survival table:</p>
+<pre>if row[2] == 'female':                             #If the passenger is female
+        row.insert(0,                                   #at element 0, insert
+             int(survival_table[0,float(row[0])-1, \    #the prediction from
+             bin_fare])) #Insert the prediciton         #survival table
+        open_file_object.writerow(row)                  #And write out row          
+    else:
+        row.insert(0,\
+             int(survival_table[1,float(row[0])-1, \
+             bin_fare]))                               
+                                                       
+        open_file_object.writerow(row)
+</pre>
+<p>We have now inserted a 1 or 0 according to gender, class, and how much she/he paid for a ticket. We can now submit the file&nbsp;genderclasspricebasedmodelpy.csv.</p>
+<p>In summary, we have created a script that can easily be altered to include more variables. For example, we could add in age, where they embarked, or even their name. &nbsp;All these variables may themselves have complications, so you may need to think of ways
+ to make them useful. &nbsp;Here we assumed the class of ticket correlated with price in order to fill in the ticket price gaps. &nbsp;Using python we have developed an extensible model without too much effort.</p>
+
+    
+
+
+                </div>
+        </div> 
+        </div><!-- comp-content -->
+</div><!-- competition -->
+
+<script type="text/javascript">
+
+     (function ($) {
+        /**
+        * Resizes an inner element's font so that the inner element completely fills the outer element.
+        * author Russ Painter WebDesign@GeekyMonkey.com
+        * version 0.1
+        */
+        $.fn.textfill = function (options) {
+            var defaults = {
+                maxFontPixels: 40,
+                innerTag: 'span'
+            };
+            var Opts = jQuery.extend(defaults, options);
+            return this.each(function () {
+                var fontSize = Opts.maxFontPixels;
+                var ourText = $(Opts.innerTag + ':visible:first', this);
+                var maxHeight = $(this).height();
+                var maxWidth = $(this).width();
+                var textHeight;
+                var textWidth;
+                do {
+                    ourText.css('font-size', fontSize);
+                    textHeight = ourText.height();
+                    textWidth = ourText.width();
+                    fontSize = fontSize - 1;
+                } while ((textHeight > maxHeight || textWidth > maxWidth) && fontSize > 3);
+            });
+        };
+    })(jQuery);
+
+    $(document).ready(function () {
+        $('#comp-header-details h1').textfill({ maxFontPixels: 26, innerTag: 'a' });
+    });
+
+
+</script>
+
+        </div> <!-- main -->
+    </div> <!-- wrap -->   
+    <div id="footer">
+        <div id="footer-inside">
+            <div id="footer-copyright">
+                    <div id="social-links">
+            <a href="http://www.twitter.com/kaggle"><img src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/social-sidebar-twitter.png" width="23" height="24" alt="Twitter" title="Follow Kaggle on Twitter"></a>        
+                    <a href="http://www.facebook.com/kaggle"><img src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/social-sidebar-facebook.png" width="23" height="24" alt="Facebook" title="Follow Kaggle on Facebook"></a>           
+                    <a href="http://www.linkedin.com/companies/kaggle"><img src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/social-sidebar-linkedin.png" width="23" height="24" alt="LinkedIn" title="Follow Kaggle on LinkedIn"></a>        
+    </div><!-- social-links -->
+
+                
+© 2012 Kaggle Inc            </div>
+            <div id="footer-links">
+                <a href="https://www.kaggle.com/terms">Terms &amp; Conditions</a> •  
+<a href="https://www.kaggle.com/privacy">Privacy Policy</a> •  
+<a href="https://www.kaggle.com/team">Our Team</a> •  
+<a href="https://www.kaggle.com/careers">Careers</a> •  
+<a href="https://www.kaggle.com/contact/press">Press</a> •  
+<a href="https://www.kaggle.com/papers">Academic Papers</a> •  
+<a href="https://www.kaggle.com/contact">Contact Us</a>
+            </div> <!-- footer-links -->
+        </div> <!-- footer-inside -->
+    </div> <!--footer-->
+    
+        <script type="text/x-mathjax-config;executed=true">
+            MathJax.Hub.Config({
+                "HTML-CSS": {
+                    preferredFont: "TeX",
+                    availableFonts: ["STIX","TeX"],
+                    linebreaks: {
+                        automatic: true
+                    },
+                    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+                },
+                tex2jax: {
+                    inlineMath: [ ["\\\\(","\\\\)"] ],
+                    displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+                    processEscapes: true,
+                    ignoreClass: "tex2jax_ignore|dno"
+                },
+                TeX: {
+                    noUndefined: {
+                        attributes: {
+                            mathcolor: "red",
+                            mathbackground: "#FFEEEE",
+                            mathsize: "90%"
+                        }
+                    }
+                },
+                messageStyle: "none"
+            });
+        </script>
+                <script type="text/javascript" src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/head.load-0.96.min.js"></script>
+            <script type="text/javascript">
+                head.js("https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML");
+            </script><script type="text/javascript" src="./Getting Started With Python - Titanic  Machine Learning from Disaster - Kaggle_files/MathJax.js"></script>
+    
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12629138-1']);
+            _gaq.push(['_trackPageview']);
+            _gaq.push(['_trackPageLoadTime']);
+            _gaq.push(['_setCustomVar', 1, 'usertype', 'registered', 2]);
+            _gaq.push(['_setCustomVar', 2, 'userid', '59773', 2]);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+    
+
+    <!-- G'day 64.70.114.88! Cheers, Web_IN_0 -->
+
+
+</body></html>

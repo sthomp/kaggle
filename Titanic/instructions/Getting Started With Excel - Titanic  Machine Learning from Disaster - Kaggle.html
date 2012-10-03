@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-excel -->
+<html><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Getting Started With Excel - Titanic: Machine Learning from Disaster - Kaggle</title>
+    
+    <meta name="robots" content="index, follow">
+    <link href="https://www.kaggle.com/content/v/e7918c3028a4/kaggle/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+        <meta name="keywords" content="Kaggle, data science, data mining, forecasting, statistics, prediction, bioinformatics, competitions, contests, crowdsourced analytics">
+            <meta name="description" content="Kaggle is a platform for data prediction competitions. Companies, organizations and researchers post their data and have it scrutinized by the world&#39;s best statisticians.">
+
+
+        <link rel="stylesheet" href="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/base.less" type="text/css">
+        <link rel="stylesheet" href="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/kaggle-site.less" type="text/css">
+        <!--[if !IE]>-->
+            <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/mobile.less" type="text/css" media="only screen and (max-device-width: 959px)">
+        <!--<![endif]-->
+
+    
+
+        <script type="text/javascript" async="" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/ga.js"></script><script type="text/javascript" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/jquery.min.js"></script>
+                <script type="text/javascript" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/kaggle.min.js"></script>
+
+    
+                                                    
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuTitle {background-color: #CCCCCC; margin: -5px 0 0 0; text-align: center; font-style: italic; font-size: 80%; color: #444444; padding: 2px 0; overflow: hidden}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+
+<body class="logged-in "><div id="MathJax_Message" style="display: none; "></div>
+    <div id="wrap"><!-- needed for sticky footer -->
+        
+           
+
+<div id="top-bar">
+    <div id="top-bar-inside">
+                
+        <ul id="top-bar-links">
+                <li><a href="https://www.kaggle.com/account/logoff" class="logout-link">Sign out</a></li>
+        </ul>             
+    </div>            
+</div>
+
+<script type="text/javascript">
+    $(function() {
+
+        //login box slidedown
+        $('.login-link').click(function(e) {
+            e.preventDefault();
+            $('#top-bar-signin').slideToggle(250, 'easeOutSine', function() { $('#UserName').focus(); });
+
+            if (!$('#hovering-overlay.login-overlay').length) {
+                $('body').append('<div id="hovering-overlay" class="login-overlay" style="z-index:995; display:none; opacity:0.4">&nbsp;</div>');
+                $('#hovering-overlay.login-overlay').fadeIn('fast');
+            } else {
+                $('#hovering-overlay.login-overlay').fadeOut('fast', function() { $(this).remove(); });
+            }
+        });
+
+        // if user clicks grey-out overlay when there is login dialog, kill dialog
+        $('body').on('click', '#hovering-overlay.login-overlay', function() {
+            $('#top-bar-signin').slideToggle(250, 'easeOutSine', function() { $('#UserName').focus(); });
+            $('#hovering-overlay.login-overlay').fadeOut('fast', function() { $(this).remove(); });
+        });
+    });
+</script>
+
+        <div id="header">
+            <div id="header-inside">
+                <div id="logo">
+                    <a href="https://www.kaggle.com/"><img alt="Kaggle" height="86" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/site-logo.png" width="240"></a>
+                </div>
+                <!--logo-->
+                <ul id="top-menu">
+        <li><strong><a class="profilelink" href="https://www.kaggle.com/users/59773/scott-thompson" title="View my profile">Scott Thompson</a></strong></li>
+
+    <li><a href="https://www.kaggle.com/About" title="About Kaggle">About</a></li>
+<li><a href="https://www.kaggle.com/Host" title="Learn about hosting your own competition">Hosting Center</a></li>
+<li><a href="https://www.kaggle.com/competitions" title="Search or browse all Kaggle competitions">All Competitions</a></li>
+<li><a href="https://www.kaggle.com/users" title="View the global Kaggle leaderboard" id="users-link">Users</a></li>
+<li><a href="https://www.kaggle.com/forums" title="Kaggle Forums.">Forums</a></li>
+<li><a href="https://www.kaggle.com/Wiki" title="Kaggle Public Wiki">Wiki</a></li>
+<li><a href="http://blog.kaggle.com/" title="Visit No Free Hunch, the official Kaggle blog">Blog</a></li>
+<li><a href="https://www.kaggle.com/forums/f/145/data-science-jobs" title="View job openings posted by our community">Data Science Jobs</a></li>        
+</ul>
+<!-- top-menu -->
+
+            </div> <!-- header-inside -->
+        </div> <!-- header -->
+
+
+        <!-- header-inside and header -->
+        <div id="main">
+             
+            
+
+
+
+
+<div id="competition">
+
+        <header id="comp-header">
+            
+            <a href="https://www.kaggle.com/c/titanic-gettingStarted"><img id="comp-image" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/front_page.png"></a>
+            <div id="comp-header-details">
+                <h1><a href="https://www.kaggle.com/c/titanic-gettingStarted" style="font-size: 25px; ">Titanic: Machine Learning from Disaster</a>
+                                                        </h1>
+                    <div id="comp-header-stats">
+                        <div id="comp-header-stats-progress">
+                            <div id="comp-header-stats-teams" style="width:1%">
+                            </div>
+                                <div id="comp-header-stats-remaining" style="width: 99%;">
+                                    11 months
+                                    to go
+                                </div>
+                        </div>
+                        <div id="comp-header-stats-start">Friday, September 28, 2012</div>
+                        <div id="comp-header-stats-end">Saturday, September 28, 2013</div>
+                        <div id="comp-header-stats-prize">Knowledge • 82 teams</div>
+                    </div>
+            </div>
+        </header>
+
+        <div class="comp-sidebar">
+            
+            
+
+<div id="competition-dashboard">
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <ul>
+        <li class="cd-home selected"><a href="https://www.kaggle.com/c/titanic-gettingStarted">Home/Info</a>
+            <ul>
+                <li class="cd-data"><a href="https://www.kaggle.com/c/titanic-gettingStarted/data">Data</a></li>
+
+                    <li class="cd-submit submission-link">
+                        <a class="comp-link" href="https://www.kaggle.com/c/titanic-gettingStarted/submit">Make a submission</a>
+                    </li>
+            </ul>
+        </li>
+        
+            <li class="cd-forum"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums">Forum</a></li>
+
+            <li class="cd-leaderboard"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard">Leaderboard</a></li>
+
+            <li class="cd-prospect"><a class="comp-link" href="https://www.kaggle.com/c/titanic-gettingStarted/prospector">Visualization</a></li>
+
+                <li class="cd-team"><a href="https://www.kaggle.com/c/titanic-gettingStarted/team/select">My Team</a></li>
+
+            <li class="cd-submissions"><a href="https://www.kaggle.com/c/titanic-gettingStarted/submissions">My Submissions</a></li>
+
+    </ul>
+</div>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".cd-home").addClass("selected");
+        });
+    </script>
+
+
+           
+    <div class="widget" id="compside-leaderboard">
+        
+        
+        <header>
+            <h1><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard">Leaderboard</a></h1>
+        </header>
+        
+        <ol>
+            
+            
+                    <li value="1"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.81818">deadbeatdawg (3)</a></li>
+                    <li value="2"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.80861">Anand Thakur (3)</a></li>
+                    <li value="3"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.80383">p_5_ (6)</a></li>
+                    <li value="4"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.79426">chwolfe (3)</a></li>
+                    <li value="4"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.79426">Learner_ahead (2)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">Alex (10)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">CMorton (4)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">Random Amazon (4)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">this (2)</a></li>
+                    <li value="10"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78469">Paheli (5)</a></li>
+        </ol>
+    </div> <!-- compside-leaderboard -->
+
+
+    <div class="widget" id="compside-discussions">
+        <header>
+            <h1><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums">Forum (5 topics)</a></h1>
+        </header>
+
+        <ul>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2771/welcome/15126#post15126">Welcome!</a></div>
+                    <div class="post-time">3 hours ago</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2793/implementation-in-r/15123#post15123">Implementation in R</a></div>
+                    <div class="post-time">5 hours ago</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2787/weird-things-happening-on-kaggle-website/15069#post15069">Weird things happening on Kaggle website</a></div>
+                    <div class="post-time">yesterday</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2795/changes-to-test-csv/15064#post15064">Changes to test.csv</a></div>
+                    <div class="post-time">yesterday</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2790/error-while-running-myfirstforest-py/15063#post15063">Error while running myfirstforest.py</a></div>
+                    <div class="post-time">yesterday</div>
+                </li>
+        </ul>
+
+    </div> 
+
+<div id="stats-ticker">      
+    <div id="players" class="ticker">
+            <div class="ticker-caption-teams">82 teams with</div>
+        <div class="numbers converted"><div class="ticker-number ticker-8"></div><div class="ticker-number ticker-3"></div></div>
+        <div class="ticker-caption">participants</div>
+    </div>
+    <div id="entries" class="ticker">
+        <div class="numbers converted"><div class="ticker-number ticker-2"></div><div class="ticker-number ticker-0"></div><div class="ticker-number ticker-5"></div></div>
+        <div class="ticker-caption">entries</div>
+    </div>      
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#stats-ticker .ticker div.numbers').not('.converted').each(function () {
+            $no = $(this).text();
+
+            var no_array = $no.split("");
+            $output = "";
+            for (var i = 0; i < no_array.length; i++) {
+                $output = $output + '<div class="ticker-number ticker-' + no_array[i] + '" />';
+            }
+            $(this).html($output).addClass('converted');
+        });
+    });
+    
+</script>
+        </div>
+    <div class="getting-started-with-excel comp-content with-sidebar">
+        
+            <header class="info">
+                <div class="simple-steps">
+                    <a class="info" href="https://www.kaggle.com/c/titanic-gettingStarted">Competition Details</a>
+                    »
+                    <a class="data" href="https://www.kaggle.com/c/titanic-gettingStarted/data">Get the Data</a>
+                    »
+ <a class="submit" href="https://www.kaggle.com/c/titanic-gettingStarted/submit">Make a submission</a>                 </div>
+            </header>
+        
+        <div class="comp-content-inside">
+            <div id="competition-intro">
+                
+                        <ul id="comp-homepage-subpages">
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted">Description</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/evaluation">Evaluation</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/rules">Rules</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/prizes">Prizes</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/frequently-asked-questions">Frequently Asked Questions</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/further-reading-watching">Further Reading / Watching</a>
+                </li>
+                <li class="selected">
+                    <a href="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle.html">Getting Started With Excel</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-python">Getting Started With Python</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-random-forests">Getting Started With Random Forests</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/submission-instructions">Submission Instructions</a>
+                </li>
+        </ul>
+
+            </div>
+                <div id="comp-homepage-content" class="cms-page">
+                    
+
+
+
+<h2 class="page-name">
+Getting-started-with-excel</h2>
+
+
+
+<p><span style="text-decoration:underline">Kaggle Getting Started <strong><em>with Excel</em></strong>: Titanic Competition</span></p>
+<p>For those who are not experienced with handling large data sets, logging into the Kaggle website for the first time may be slightly daunting. Many of these competitions have a six figure prize and data which can, at times, be extremely involved. Here at
+ Kaggle, we understand that this may seem like an insurmountable barrier to entry, so we have created a "getting started" competition to guide you through the initial steps required to get your first decent submission on the board.</p>
+<p><strong><span style="text-decoration:underline">The competition</span></strong></p>
+<p>The competition is simple; we want you to use the Titanic passenger data (name, age, gender, socio-economic class, etc.) to try to predict who will survive and who will die.</p>
+<p><strong><span style="text-decoration:underline">I want to compete! What do I do next?</span></strong></p>
+<p>The first thing to do is get the data from the website.&nbsp; You will need two files:
+<strong><em>train.csv </em></strong>and <strong><em>test.csv</em></strong>. The .csv filename stands for comma separated values, where every value (name, age, gender, etc.)&nbsp; in a row is separated by a comma. This allows Excel to interpet the data as columns.
+ &nbsp;If you load the file up in notepad--or your text editor of choice--it would look like this:</p>
+<p><img title="CSV in notepad" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/notepad.PNG" alt="CSV in notepad" width="600" height="126"></p>
+<p>&nbsp;However, in Excel it looks like this:</p>
+<p><img title="CSV in Excel" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/excel.PNG" alt="CSV in Excel" width="600" height="210"></p>
+<p>To get the data…Click on <a title="Get The Data" href="https://www.kaggle.com/c/titanic-would-you-have-had-a-chance/data">
+Get The Data</a>,&nbsp;This will take you to the get the data page:<img title="Download the data" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/getthedata.PNG" alt="Download the data" width="600"></p>
+<p>In order to download click on the blue file extensions (.csv). The first time you do this you will be taken to the rules acceptance page. You must accept the competition rules in order to download the data. These rules govern how many submissions you can
+ make per day, the maximum team sizes, and other competition specific details. Click "I Understand and Accept" and then re-click the filenames. &nbsp;You will need both files.</p>
+<p><strong><span style="text-decoration:underline">I have the data what do I have to do?!</span></strong></p>
+<p>You have two files, <strong><em>train.csv </em></strong>and <strong><em>test.csv</em></strong>.
+<strong><em>train.csv </em></strong>will contain the details of a subset of the passengers on board (891 to be exact) and will tell you their details and whether they survived or not. Using the patterns you find in the
+<strong><em>train.csv</em></strong> data, you will have to predict whether the other 418 passengers on board (found in
+<strong><em>test.csv)</em></strong> survived.&nbsp;</p>
+<p><strong><span style="text-decoration:underline">So I need to find patterns in the data… Where do I start?!</span></strong></p>
+<p>Open up <strong><em>train.csv </em></strong>in Excel. As you can see,<strong><em>
+</em></strong>we have given you the details of a number of passengers on board the Titanic. We have given you the pclass, the class of their ticket (1<sup>st</sup>, 2<sup>nd</sup>&nbsp;or 3<sup>rd</sup>), their name, their sex, age, subsp (which is the number of
+ siblings / spouses they had on board with them), parch (which is the number of parents / children they had on board with them), their ticket type, the amount they paid for their ticket, their cabin number and embark (where they got on:&nbsp;<strong>Q</strong>ueenstown,
+<strong>C</strong>herbourg or <strong>S</strong>outhampton). We also give you whether they survived or not (1 = yes, 0 = sadly, not). This is the information you are going to use to make your predictions. We want to find if there is a relationshup between one
+ of the variables and survival.</p>
+<p>In data science, your intuition is often a great place to start. If you have ever seen the film
+<em>Titanic</em>, they try to save the women and children first. &nbsp;This would be a good guess to start! Excel has a helpful tool for this kind of explloration called a pivot table. Highlight the entire set of data and go to 'Insert'--&gt; 'Pivot Tables'.</p>
+<p><img title="Insert a Pivot Table!" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/pivot.PNG" alt="Insert a Pivot Table!" width="600" height="202"></p>
+<p>This should create a new spreadsheet in your document. On the right should be all the variables that you selected and four boxes at the bottom. We are interested in who survived, so you want to see how this value varies as you select other variables. On
+ the right hand side, drag the word 'survived', which has a check box next to it, down to the bottom right hand box. This will show the sum of the survived box. Now, to see how many women and men survived, drag the 'sex' variable to the 'Row labels'. Since
+ survived is a 1 or 0, the sum of this is the total number who survived. If you want to find the proportion, drag the survived variable again into the values box (so now there are two in there) click on the down arrow, select value field settings, and change
+ 'Sum' to 'count'. This will tell you the total number of rows (or passengers in this case). Now, in the cell next to the table you can just type = B4 / C4, which would show the proportion on females that survived.</p>
+<p><img title="Work out the proportion of survivors" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/proportions.PNG" alt="Work out the proportion of survivors" width="600" height="514"></p>
+<p>From this you can see that almost 75% of the females survived! However, only 19% of the males lived to tell about it. This is quite a promising first guess!</p>
+<p><strong><span style="text-decoration:underline">Making my predictions</span></strong></p>
+<p>Gender seems to be a strong indicator of survival, with women having a much better chance! To make your first predictions based on this open
+<strong><em>test.csv </em></strong>and&nbsp;insert a new column in the first column. <em>
+Your submission MUST have your predictions in the first column!!!</em></p>
+<p>To make a model which states that if the passenger is female then she survives in the first cell write a logical 'if' statement. Type =if(D2="female",1,0) which means if(sex=female, then make this cell = 1, if not then make this cell =0). Then double click
+ on the bottom right hand corner of this box so it drags down through all rows. Save the file as something memorable. We'll use 'genderbasedmodel.csv'.&nbsp;</p>
+<p><img title="A gender based model!" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/Submission.png" alt="A gender based model!" width="600" height="514"></p>
+<p>&nbsp;<strong><span style="text-decoration:underline">I’ve made my predictions, how well have I done?</span></strong></p>
+<p>Go back to your internet browser and the competition page and click 'Make a submission'. This should bring up your team page. This is where you can set up your team. On Kaggle you are always a member of a team, whether it is one person or 20 people. Each
+ team has a team leader. Teams can be added to at a later date, however members <em>
+cannot be removed, </em>so choose carefully! You can compete anonymously as well, if don’t want people to see your name. Hit 'Continue' and the first thing you may notice is 'You have 2 (of 2 entries) left today'. We limit the number of submissions you make
+ so you can't use the leaderboard score to gain and unfair advantage with your submissions. Click on the button 'Click or Drop Submission Here' and select the file you would like to submit (here, 'genderbasedmodel.csv') and click 'Submit'.</p>
+<p><img title="The Kaggle Leaderboard!" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/leaderboard.png" alt="The Kaggle Leaderboard!" width="600" height="324"></p>
+<p>Once you have submitted, you will be taken to the leaderboard and shown your score and ranking on the leaderboard. Each competition is scored based on different evaluation metrics, whose details are described on the 'Evaluation' page. &nbsp;In this competition
+ the metric is just the fraction you got correct.</p>
+<p><strong><span style="text-decoration:underline">I’ve made my submission but I want to do better!</span></strong></p>
+<p>Your first submission will likely not be your best at the end of the competition. As the competition grows and evolves, people learn about the data, posts on the forum discussing techniques which give insight, and you will think of new ways to improve your
+ model. &nbsp;Let's try to improve ours.</p>
+<p>Going back to the <strong><em>train.csv</em></strong>, you want to improve what you currently have. Extending the earlier hypothesis that maybe age may also be predictive, you can add age to the pivot table. Drag age to the Row labels (where sex was) and
+ it will show the number of passengers who were match on both gender and an age. However, as you may notice, the age is not binned up in any way. You may want to group these up, perhaps starting with just adults and children. Just like before, make an extra
+ column with a 'if' statement. In this case, it will read =IF(E2&gt;18,"adult","child"), where E2 was the age column. Now recreate the pivot table (note you have to re-make it) and add the same variables before, you can see if there are more patterns!&nbsp;</p>
+<p>According to the table, women over 18 had a 78% chance of survival and male adults only had an 18% chance of survival. You can see that this isn’t much changed from the original proportions. This tells us that there is not much additional information in
+ the age variable. Let's look at one more variable: the class of passenger. Adding this to the pivot table we can see the results:</p>
+<p><img title="Adding Class to the pivot table" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/morecomplex.png" alt="Adding Class to the pivot table" width="600" height="319"></p>
+<p>As you can see, the proportions have now changed dramatically, meaning that there is some predictive merit to this variable. However, this still doesn't surpass the male/female divide. Now let's bin up what people paid for their ticket, so that each class
+ is split into payments of less than $10, between $10 and $20, between $20 and $30, and greater than $30:</p>
+<p><img title="Price, Class and gender in my pivot table" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/priceclassgender.PNG" alt="Price, Class and gender in my pivot table" width="600" height="320"></p>
+<p>As you can see, we can differentiate between those who paid a lot for their third class ticket, and those who did not, and look at the effect on my submitted score!</p>
+<p><img title="I am number 1!" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/numberone.png" alt="I am number 1!" width="600" height="321"></p>
+<p>Here Excel was used to get the basic understanding of the data. From just this basic bit of work, we have found that people did not necessarily pay the same amount of money for a ticket; some people paid more for a third class than a first class!</p>
+<p>This concludes our first tutorial. We have been able to download the data and make a simple model based on our initial understanding of the problem. We made a submission to Kaggle, and then built on it and made an improvement. &nbsp;&nbsp;As we incorporate more models
+ and more complicated ideas, we may want to move to something slightly more sophisticated than excel. The next tutorial will look at using Python, a simple scripting language which can help automate our analysis.</p>
+
+    
+
+
+                </div>
+        </div> 
+        </div><!-- comp-content -->
+</div><!-- competition -->
+
+<script type="text/javascript">
+
+     (function ($) {
+        /**
+        * Resizes an inner element's font so that the inner element completely fills the outer element.
+        * author Russ Painter WebDesign@GeekyMonkey.com
+        * version 0.1
+        */
+        $.fn.textfill = function (options) {
+            var defaults = {
+                maxFontPixels: 40,
+                innerTag: 'span'
+            };
+            var Opts = jQuery.extend(defaults, options);
+            return this.each(function () {
+                var fontSize = Opts.maxFontPixels;
+                var ourText = $(Opts.innerTag + ':visible:first', this);
+                var maxHeight = $(this).height();
+                var maxWidth = $(this).width();
+                var textHeight;
+                var textWidth;
+                do {
+                    ourText.css('font-size', fontSize);
+                    textHeight = ourText.height();
+                    textWidth = ourText.width();
+                    fontSize = fontSize - 1;
+                } while ((textHeight > maxHeight || textWidth > maxWidth) && fontSize > 3);
+            });
+        };
+    })(jQuery);
+
+    $(document).ready(function () {
+        $('#comp-header-details h1').textfill({ maxFontPixels: 26, innerTag: 'a' });
+    });
+
+
+</script>
+
+        </div> <!-- main -->
+    </div> <!-- wrap -->   
+    <div id="footer">
+        <div id="footer-inside">
+            <div id="footer-copyright">
+                    <div id="social-links">
+            <a href="http://www.twitter.com/kaggle"><img src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/social-sidebar-twitter.png" width="23" height="24" alt="Twitter" title="Follow Kaggle on Twitter"></a>        
+                    <a href="http://www.facebook.com/kaggle"><img src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/social-sidebar-facebook.png" width="23" height="24" alt="Facebook" title="Follow Kaggle on Facebook"></a>           
+                    <a href="http://www.linkedin.com/companies/kaggle"><img src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/social-sidebar-linkedin.png" width="23" height="24" alt="LinkedIn" title="Follow Kaggle on LinkedIn"></a>        
+    </div><!-- social-links -->
+
+                
+© 2012 Kaggle Inc            </div>
+            <div id="footer-links">
+                <a href="https://www.kaggle.com/terms">Terms &amp; Conditions</a> •  
+<a href="https://www.kaggle.com/privacy">Privacy Policy</a> •  
+<a href="https://www.kaggle.com/team">Our Team</a> •  
+<a href="https://www.kaggle.com/careers">Careers</a> •  
+<a href="https://www.kaggle.com/contact/press">Press</a> •  
+<a href="https://www.kaggle.com/papers">Academic Papers</a> •  
+<a href="https://www.kaggle.com/contact">Contact Us</a>
+            </div> <!-- footer-links -->
+        </div> <!-- footer-inside -->
+    </div> <!--footer-->
+    
+        <script type="text/x-mathjax-config;executed=true">
+            MathJax.Hub.Config({
+                "HTML-CSS": {
+                    preferredFont: "TeX",
+                    availableFonts: ["STIX","TeX"],
+                    linebreaks: {
+                        automatic: true
+                    },
+                    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+                },
+                tex2jax: {
+                    inlineMath: [ ["\\\\(","\\\\)"] ],
+                    displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+                    processEscapes: true,
+                    ignoreClass: "tex2jax_ignore|dno"
+                },
+                TeX: {
+                    noUndefined: {
+                        attributes: {
+                            mathcolor: "red",
+                            mathbackground: "#FFEEEE",
+                            mathsize: "90%"
+                        }
+                    }
+                },
+                messageStyle: "none"
+            });
+        </script>
+                <script type="text/javascript" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/head.load-0.96.min.js"></script>
+            <script type="text/javascript">
+                head.js("https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML");
+            </script><script type="text/javascript" src="./Getting Started With Excel - Titanic  Machine Learning from Disaster - Kaggle_files/MathJax.js"></script>
+    
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12629138-1']);
+            _gaq.push(['_trackPageview']);
+            _gaq.push(['_trackPageLoadTime']);
+            _gaq.push(['_setCustomVar', 1, 'usertype', 'registered', 2]);
+            _gaq.push(['_setCustomVar', 2, 'userid', '59773', 2]);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+    
+
+    <!-- G'day 64.70.114.88! Cheers, Web_IN_0 -->
+
+
+</body></html>

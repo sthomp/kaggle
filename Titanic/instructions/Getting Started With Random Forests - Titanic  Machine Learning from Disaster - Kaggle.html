@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)https://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-random-forests -->
+<html><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Getting Started With Random Forests - Titanic: Machine Learning from Disaster - Kaggle</title>
+    
+    <meta name="robots" content="index, follow">
+    <link href="https://www.kaggle.com/content/v/e7918c3028a4/kaggle/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+        <meta name="keywords" content="Kaggle, data science, data mining, forecasting, statistics, prediction, bioinformatics, competitions, contests, crowdsourced analytics">
+            <meta name="description" content="Kaggle is a platform for data prediction competitions. Companies, organizations and researchers post their data and have it scrutinized by the world&#39;s best statisticians.">
+
+
+        <link rel="stylesheet" href="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/base.less" type="text/css">
+        <link rel="stylesheet" href="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/kaggle-site.less" type="text/css">
+        <!--[if !IE]>-->
+            <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/mobile.less" type="text/css" media="only screen and (max-device-width: 959px)">
+        <!--<![endif]-->
+
+    
+
+        <script type="text/javascript" async="" src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/ga.js"></script><script type="text/javascript" src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/jquery.min.js"></script>
+                <script type="text/javascript" src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/kaggle.min.js"></script>
+
+    
+                                                    
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuTitle {background-color: #CCCCCC; margin: -5px 0 0 0; text-align: center; font-style: italic; font-size: 80%; color: #444444; padding: 2px 0; overflow: hidden}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+
+<body class="logged-in "><div id="MathJax_Message" style="display: none; "></div>
+    <div id="wrap"><!-- needed for sticky footer -->
+        
+           
+
+<div id="top-bar">
+    <div id="top-bar-inside">
+                
+        <ul id="top-bar-links">
+                <li><a href="https://www.kaggle.com/account/logoff" class="logout-link">Sign out</a></li>
+        </ul>             
+    </div>            
+</div>
+
+<script type="text/javascript">
+    $(function() {
+
+        //login box slidedown
+        $('.login-link').click(function(e) {
+            e.preventDefault();
+            $('#top-bar-signin').slideToggle(250, 'easeOutSine', function() { $('#UserName').focus(); });
+
+            if (!$('#hovering-overlay.login-overlay').length) {
+                $('body').append('<div id="hovering-overlay" class="login-overlay" style="z-index:995; display:none; opacity:0.4">&nbsp;</div>');
+                $('#hovering-overlay.login-overlay').fadeIn('fast');
+            } else {
+                $('#hovering-overlay.login-overlay').fadeOut('fast', function() { $(this).remove(); });
+            }
+        });
+
+        // if user clicks grey-out overlay when there is login dialog, kill dialog
+        $('body').on('click', '#hovering-overlay.login-overlay', function() {
+            $('#top-bar-signin').slideToggle(250, 'easeOutSine', function() { $('#UserName').focus(); });
+            $('#hovering-overlay.login-overlay').fadeOut('fast', function() { $(this).remove(); });
+        });
+    });
+</script>
+
+        <div id="header">
+            <div id="header-inside">
+                <div id="logo">
+                    <a href="https://www.kaggle.com/"><img alt="Kaggle" height="86" src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/site-logo.png" width="240"></a>
+                </div>
+                <!--logo-->
+                <ul id="top-menu">
+        <li><strong><a class="profilelink" href="https://www.kaggle.com/users/59773/scott-thompson" title="View my profile">Scott Thompson</a></strong></li>
+
+    <li><a href="https://www.kaggle.com/About" title="About Kaggle">About</a></li>
+<li><a href="https://www.kaggle.com/Host" title="Learn about hosting your own competition">Hosting Center</a></li>
+<li><a href="https://www.kaggle.com/competitions" title="Search or browse all Kaggle competitions">All Competitions</a></li>
+<li><a href="https://www.kaggle.com/users" title="View the global Kaggle leaderboard" id="users-link">Users</a></li>
+<li><a href="https://www.kaggle.com/forums" title="Kaggle Forums.">Forums</a></li>
+<li><a href="https://www.kaggle.com/Wiki" title="Kaggle Public Wiki">Wiki</a></li>
+<li><a href="http://blog.kaggle.com/" title="Visit No Free Hunch, the official Kaggle blog">Blog</a></li>
+<li><a href="https://www.kaggle.com/forums/f/145/data-science-jobs" title="View job openings posted by our community">Data Science Jobs</a></li>        
+</ul>
+<!-- top-menu -->
+
+            </div> <!-- header-inside -->
+        </div> <!-- header -->
+
+
+        <!-- header-inside and header -->
+        <div id="main">
+             
+            
+
+
+
+
+<div id="competition">
+
+        <header id="comp-header">
+            
+            <a href="https://www.kaggle.com/c/titanic-gettingStarted"><img id="comp-image" src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/front_page.png"></a>
+            <div id="comp-header-details">
+                <h1><a href="https://www.kaggle.com/c/titanic-gettingStarted" style="font-size: 25px; ">Titanic: Machine Learning from Disaster</a>
+                                                        </h1>
+                    <div id="comp-header-stats">
+                        <div id="comp-header-stats-progress">
+                            <div id="comp-header-stats-teams" style="width:1%">
+                            </div>
+                                <div id="comp-header-stats-remaining" style="width: 99%;">
+                                    11 months
+                                    to go
+                                </div>
+                        </div>
+                        <div id="comp-header-stats-start">Friday, September 28, 2012</div>
+                        <div id="comp-header-stats-end">Saturday, September 28, 2013</div>
+                        <div id="comp-header-stats-prize">Knowledge • 82 teams</div>
+                    </div>
+            </div>
+        </header>
+
+        <div class="comp-sidebar">
+            
+            
+
+<div id="competition-dashboard">
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <ul>
+        <li class="cd-home selected"><a href="https://www.kaggle.com/c/titanic-gettingStarted">Home/Info</a>
+            <ul>
+                <li class="cd-data"><a href="https://www.kaggle.com/c/titanic-gettingStarted/data">Data</a></li>
+
+                    <li class="cd-submit submission-link">
+                        <a class="comp-link" href="https://www.kaggle.com/c/titanic-gettingStarted/submit">Make a submission</a>
+                    </li>
+            </ul>
+        </li>
+        
+            <li class="cd-forum"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums">Forum</a></li>
+
+            <li class="cd-leaderboard"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard">Leaderboard</a></li>
+
+            <li class="cd-prospect"><a class="comp-link" href="https://www.kaggle.com/c/titanic-gettingStarted/prospector">Visualization</a></li>
+
+                <li class="cd-team"><a href="https://www.kaggle.com/c/titanic-gettingStarted/team/select">My Team</a></li>
+
+            <li class="cd-submissions"><a href="https://www.kaggle.com/c/titanic-gettingStarted/submissions">My Submissions</a></li>
+
+    </ul>
+</div>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".cd-home").addClass("selected");
+        });
+    </script>
+
+
+           
+    <div class="widget" id="compside-leaderboard">
+        
+        
+        <header>
+            <h1><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard">Leaderboard</a></h1>
+        </header>
+        
+        <ol>
+            
+            
+                    <li value="1"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.81818">deadbeatdawg (3)</a></li>
+                    <li value="2"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.80861">Anand Thakur (3)</a></li>
+                    <li value="3"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.80383">p_5_ (6)</a></li>
+                    <li value="4"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.79426">chwolfe (3)</a></li>
+                    <li value="4"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.79426">Learner_ahead (2)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">Alex (10)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">CMorton (4)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">Random Amazon (4)</a></li>
+                    <li value="6"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78947">this (2)</a></li>
+                    <li value="10"><a href="https://www.kaggle.com/c/titanic-gettingStarted/leaderboard#0.78469">Paheli (5)</a></li>
+        </ol>
+    </div> <!-- compside-leaderboard -->
+
+
+    <div class="widget" id="compside-discussions">
+        <header>
+            <h1><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums">Forum (5 topics)</a></h1>
+        </header>
+
+        <ul>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2771/welcome/15126#post15126">Welcome!</a></div>
+                    <div class="post-time">3 hours ago</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2793/implementation-in-r/15123#post15123">Implementation in R</a></div>
+                    <div class="post-time">5 hours ago</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2787/weird-things-happening-on-kaggle-website/15069#post15069">Weird things happening on Kaggle website</a></div>
+                    <div class="post-time">yesterday</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2795/changes-to-test-csv/15064#post15064">Changes to test.csv</a></div>
+                    <div class="post-time">yesterday</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/c/titanic-gettingStarted/forums/t/2790/error-while-running-myfirstforest-py/15063#post15063">Error while running myfirstforest.py</a></div>
+                    <div class="post-time">yesterday</div>
+                </li>
+        </ul>
+
+    </div> 
+
+<div id="stats-ticker">      
+    <div id="players" class="ticker">
+            <div class="ticker-caption-teams">82 teams with</div>
+        <div class="numbers converted"><div class="ticker-number ticker-8"></div><div class="ticker-number ticker-3"></div></div>
+        <div class="ticker-caption">participants</div>
+    </div>
+    <div id="entries" class="ticker">
+        <div class="numbers converted"><div class="ticker-number ticker-2"></div><div class="ticker-number ticker-0"></div><div class="ticker-number ticker-5"></div></div>
+        <div class="ticker-caption">entries</div>
+    </div>      
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#stats-ticker .ticker div.numbers').not('.converted').each(function () {
+            $no = $(this).text();
+
+            var no_array = $no.split("");
+            $output = "";
+            for (var i = 0; i < no_array.length; i++) {
+                $output = $output + '<div class="ticker-number ticker-' + no_array[i] + '" />';
+            }
+            $(this).html($output).addClass('converted');
+        });
+    });
+    
+</script>
+        </div>
+    <div class="getting-started-with-random-forests comp-content with-sidebar">
+        
+            <header class="info">
+                <div class="simple-steps">
+                    <a class="info" href="https://www.kaggle.com/c/titanic-gettingStarted">Competition Details</a>
+                    »
+                    <a class="data" href="https://www.kaggle.com/c/titanic-gettingStarted/data">Get the Data</a>
+                    »
+ <a class="submit" href="https://www.kaggle.com/c/titanic-gettingStarted/submit">Make a submission</a>                 </div>
+            </header>
+        
+        <div class="comp-content-inside">
+            <div id="competition-intro">
+                
+                        <ul id="comp-homepage-subpages">
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted">Description</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/evaluation">Evaluation</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/rules">Rules</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/prizes">Prizes</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/frequently-asked-questions">Frequently Asked Questions</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/further-reading-watching">Further Reading / Watching</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-excel">Getting Started With Excel</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/getting-started-with-python">Getting Started With Python</a>
+                </li>
+                <li class="selected">
+                    <a href="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle.html">Getting Started With Random Forests</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/c/titanic-gettingStarted/details/submission-instructions">Submission Instructions</a>
+                </li>
+        </ul>
+
+            </div>
+                <div id="comp-homepage-content" class="cms-page">
+                    
+
+
+
+<h2 class="page-name">
+Getting-started-with-random-forests</h2>
+
+
+
+<p><span style="text-decoration:underline">Kaggle Getting Started <em>with Random Forests:
+</em>Titanic Competition</span></p>
+<p>The third and final step in this series of tutorials will be a quick guide to multivariate models that truly learn from your data. As far as competing and doing well in Kaggle competitions, this is the most important page, however there is much more to learn
+ beyond this. &nbsp;We hope this gives you a taste of how simple it can be to apply a sophisticated algorithm.</p>
+<p><strong><span style="text-decoration:underline">Quick Recap:</span></strong></p>
+<p>The previous tutorials allowed us to open the data in both Excel and in the scripting language Python. We created a simple model in both and wrote a csv to use as our submission. We are going to build on these skills to create what is known as a random forest<span>™</span>
+ (or, an ensemble of decision trees).</p>
+<p><strong><span style="text-decoration:underline">The Beauty of Python</span></strong></p>
+<p>This is where the effort you put into getting Python running pays off! As was mentioned in the previous tutorial, Python has handy, built-in packages to help you manpiulate arrays, compute complex math functions, read in complex file formats, and in this
+ case, create random forests. You will need to install the scikit-learn package , which has the handy RandomForestClassifier class.&nbsp; For more on this package, visit the
+<a title="Searching for my random forest" href="http://scikit-learn.org/dev/modules/generated/sklearn.ensemble.RandomForestClassifier.html">
+scikit random forest page.</a></p>
+<p><strong><span style="text-decoration:underline">What is a Random Forest?</span></strong></p>
+<p>As with all the important questions in life, this is best deferred to the <a title="What is a random forest?!" href="http://en.wikipedia.org/wiki/Random_forest">
+Wikipedia page</a>. A random forest is an ensemble of <a title="Decision Tree" href="http://en.wikipedia.org/wiki/Decision_tree" target="_blank">
+decision trees</a> which will output a prediction value, in this case survival. Each decision tree is constructed by using a random subset of the training data. After you have trained your forest, you can then pass each test row through in order to output a
+ prediction. Simple! Well not quite! This particular python function requires floats for the input variables, so all strings need to be converted and any missing data needs to be filled.</p>
+<p><strong><span style="text-decoration:underline">How do I clean and fill?</span></strong></p>
+<p>Not all types of data can be converted into floats. For example, names would be very difficult. In these cases let's decide to neglect these columns. Although they are strings, categorical variables &nbsp;like male and female can be converted to 1 and 0, and
+ the port of embarkment, which has three categories, can be converted to a 0, 1 or 2 (Cherbourg, Southamption and Queenstown). This may seem like a non-sensical way of classifying, since Cherbourg is not twice the value of Southampton, but random forests are
+ somewhat robust when the number of different attributes are not too numerous.</p>
+<p>Converting from categorical strings to floats is intuitive, however, filling in data can be more tricky. &nbsp;Some data cannot be trivially filled (such as cabin) without complete knowledge of every cabin and ticket price for the entire ship. &nbsp;Nonetheless, ticket
+ price can be estimated if you know the class, or the age of a passenger can be estimated using the median age of the people on board. Fortunately for us, the amount of missing data here is not too large, so the method for which you choose to fill the data
+ shouldn’t have too much of an effect on your predictive result.</p>
+<p><strong><span style="text-decoration:underline">My data is complete and floating nicely, I want to predict</span></strong></p>
+<p>Using the predictive capabilities of the python package is very simple. In fact, it can be carried out in three simple steps. &nbsp;It is assumed that you have read in the training data into an array train_data, where the first column is the column with the survival
+ column, that the name, cabin, and ticket columns have been removed, and also that the gender and embarkation columns have been converted to floats:</p>
+<pre>From sklearn.ensemble import RandomForestClassifier      #import the random 
+                                                         #forest package
+Forest = RandomForestClassifier(n_estimators = 100)      #Create the random 
+                                                         #forest object which 
+                                                         #will include all the 
+                                                         #parameters for the fit
+Forest = Forest.fit(train_data[0::,1::],train_data[0::,0]) #fit the training 
+                                                         #data to the training 
+                                                         #output and create the
+                                                         #decision trees
+Output = Forest.predict(test_data)                       #Take the same decision
+                                                         #trees and run on the
+                                                         #test data
+</pre>
+<p>The output will be an array with a length equal to the number of passengers in the test set and a prediction of whether they survived. &nbsp;You can change the parameters as you see fit, as described on the&nbsp;<a title="Change those parameters!" href="http://scikit-learn.org/dev/modules/generated/sklearn.ensemble.RandomForestClassifier.html" target="_blank">documentation
+ page</a>.</p>
+<p><span style="text-decoration:underline"><strong>Word of Warning!!!</strong></span></p>
+<p><span style="text-decoration:underline"><strong><img title="Better or No Better" src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/overfitted.png" alt="Better or No Better" width="600" height="309"><br>
+</strong></span></p>
+<p>It appears that I have not done any better! This seems strange, as your intial thoughts are, "This is more complicated therefore should be better!" This gives us three lessons to bear in mind:</p>
+<ol>
+<li>A simple model is not always a bad model. Sometimes, concise, simple views of data reveal their true patterns and nature.
+</li><li>This is not the final score! I have not done as well on the public leader board, but who knows what the private may hold. I made my previous model on the assumptions of the training data. Who is to say these will hold in the private leaderboard?!
+</li><li>The data set is very small, the differences in scores are one or two flips in decisions between survived or not survived. This means it is very hard to determine the quality of the model from this data set. The aim of this was to show you an easy way into
+ more difficult problems so dont be too disheartened if your super complicated random forest doesn't beat the gender based one!
+</li></ol>
+<p>Now you have the a small set of skills to get you going in the larger competitions. Please feel free to post comments and opinions on the forums, questions (and answers!). &nbsp;Chances are the experiences you have and questions you ask will be shared by other.</p>
+<p>Good luck with the competition!</p>
+
+    
+
+
+                </div>
+        </div> 
+        </div><!-- comp-content -->
+</div><!-- competition -->
+
+<script type="text/javascript">
+
+     (function ($) {
+        /**
+        * Resizes an inner element's font so that the inner element completely fills the outer element.
+        * author Russ Painter WebDesign@GeekyMonkey.com
+        * version 0.1
+        */
+        $.fn.textfill = function (options) {
+            var defaults = {
+                maxFontPixels: 40,
+                innerTag: 'span'
+            };
+            var Opts = jQuery.extend(defaults, options);
+            return this.each(function () {
+                var fontSize = Opts.maxFontPixels;
+                var ourText = $(Opts.innerTag + ':visible:first', this);
+                var maxHeight = $(this).height();
+                var maxWidth = $(this).width();
+                var textHeight;
+                var textWidth;
+                do {
+                    ourText.css('font-size', fontSize);
+                    textHeight = ourText.height();
+                    textWidth = ourText.width();
+                    fontSize = fontSize - 1;
+                } while ((textHeight > maxHeight || textWidth > maxWidth) && fontSize > 3);
+            });
+        };
+    })(jQuery);
+
+    $(document).ready(function () {
+        $('#comp-header-details h1').textfill({ maxFontPixels: 26, innerTag: 'a' });
+    });
+
+
+</script>
+
+        </div> <!-- main -->
+    </div> <!-- wrap -->   
+    <div id="footer">
+        <div id="footer-inside">
+            <div id="footer-copyright">
+                    <div id="social-links">
+            <a href="http://www.twitter.com/kaggle"><img src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/social-sidebar-twitter.png" width="23" height="24" alt="Twitter" title="Follow Kaggle on Twitter"></a>        
+                    <a href="http://www.facebook.com/kaggle"><img src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/social-sidebar-facebook.png" width="23" height="24" alt="Facebook" title="Follow Kaggle on Facebook"></a>           
+                    <a href="http://www.linkedin.com/companies/kaggle"><img src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/social-sidebar-linkedin.png" width="23" height="24" alt="LinkedIn" title="Follow Kaggle on LinkedIn"></a>        
+    </div><!-- social-links -->
+
+                
+© 2012 Kaggle Inc            </div>
+            <div id="footer-links">
+                <a href="https://www.kaggle.com/terms">Terms &amp; Conditions</a> •  
+<a href="https://www.kaggle.com/privacy">Privacy Policy</a> •  
+<a href="https://www.kaggle.com/team">Our Team</a> •  
+<a href="https://www.kaggle.com/careers">Careers</a> •  
+<a href="https://www.kaggle.com/contact/press">Press</a> •  
+<a href="https://www.kaggle.com/papers">Academic Papers</a> •  
+<a href="https://www.kaggle.com/contact">Contact Us</a>
+            </div> <!-- footer-links -->
+        </div> <!-- footer-inside -->
+    </div> <!--footer-->
+    
+        <script type="text/x-mathjax-config;executed=true">
+            MathJax.Hub.Config({
+                "HTML-CSS": {
+                    preferredFont: "TeX",
+                    availableFonts: ["STIX","TeX"],
+                    linebreaks: {
+                        automatic: true
+                    },
+                    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+                },
+                tex2jax: {
+                    inlineMath: [ ["\\\\(","\\\\)"] ],
+                    displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+                    processEscapes: true,
+                    ignoreClass: "tex2jax_ignore|dno"
+                },
+                TeX: {
+                    noUndefined: {
+                        attributes: {
+                            mathcolor: "red",
+                            mathbackground: "#FFEEEE",
+                            mathsize: "90%"
+                        }
+                    }
+                },
+                messageStyle: "none"
+            });
+        </script>
+                <script type="text/javascript" src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/head.load-0.96.min.js"></script>
+            <script type="text/javascript">
+                head.js("https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML");
+            </script><script type="text/javascript" src="./Getting Started With Random Forests - Titanic  Machine Learning from Disaster - Kaggle_files/MathJax.js"></script>
+    
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12629138-1']);
+            _gaq.push(['_trackPageview']);
+            _gaq.push(['_trackPageLoadTime']);
+            _gaq.push(['_setCustomVar', 1, 'usertype', 'registered', 2]);
+            _gaq.push(['_setCustomVar', 2, 'userid', '59773', 2]);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+    
+
+    <!-- G'day 64.70.114.88! Cheers, Web_IN_0 -->
+
+
+</body></html>
